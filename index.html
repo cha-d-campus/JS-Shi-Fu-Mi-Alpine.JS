@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <script defer src="https://unpkg.com/alpinejs@3.9.6/dist/cdn.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <!-- <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>
+    <div x-data="{ count: 0 }">
+        <button x-on:click="count++">Increment</button>
+     
+        <span x-text="count"></span>
+    </div>
+
+    <div x-data="{ open: false }">
+        <button @click="open = ! open">Toggle Content</button>
+     
+        <div x-show="open">
+            Hello world
+        </div> 
+    </div>-->
+
+    <div x-data="game()" >
+        <button x-bind="rock">rock</button>
+        <div x-bind="resultRock">rock</div>
+        <button x-bind="paper">paper</button>
+        <div x-bind="resultPaper">paper</div>
+        <button x-bind="scissors">scissors</button>
+        <div x-bind="resultScissors">scissors</div>
+        <div x-bind="resultGame"></div>
+    </div>
+
+    <h1 class="text-center m-5">SHI FU MI !!</h1>
+    <div class="container">
+        <h2 class="text-center m-5">Faites votre choix</h2>
+        <div class="row x-data='game()'">
+            <div x-bind="resultRock" class="card col border-0" style="width: 18rem;">
+                <img  x-bind="rock" src="https://img.icons8.com/color/344/clenched-fist-skin-type-1.png" class="card-img-top" alt="rock">
+            </div>
+            <div x-bind="resultPaper" class="card col border-0" style="width: 18rem;">
+                <img x-bind="paper" src="https://img.icons8.com/color/344/stop-gesture-skin-type-1.png" class="card-img-top" alt="paper">
+            </div>
+            <div x-bind="resultScissors" class="card col border-0" style="width: 18rem;">
+                <img x-bind="scissors" src="https://img.icons8.com/color/344/hand-scissors-skin-type-1.png" class="card-img-top" alt="scissors">
+            </div>
+        </div>
+    </div>
+
+    <button id="restart">restart</button>
+    <script src="script.js"></script>
+</body>
+
+</html>
